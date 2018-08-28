@@ -8,7 +8,7 @@
 // Warning (RecordDecl):  /usr/include/libio.h:144 : could not lookup type definition for : _IO_FILE
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{32166928 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{49604928 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -22,6 +22,7 @@ import "github.com/elliotchance/c2go/linux"
 import "github.com/elliotchance/c2go/noarch"
 import "unsafe"
 
+type error_t int32
 type size_t uint32
 type __u_char uint8
 type __u_short uint16
@@ -646,7 +647,7 @@ type __compar_d_fn_t func(unsafe.Pointer, unsafe.Pointer, unsafe.Pointer) int32
 
 const // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{32166928 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{49604928 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -712,7 +713,7 @@ type map_node_s struct {
 	next  *map_node_t
 }
 
-// map_hash - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:122
+// map_hash - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:123
 /* A Lisp version 0 interpreter
    Copyright (c) 2010 James Craig Burley <james@jcb-sc.com>
 
@@ -764,7 +765,7 @@ func map_hash(str *byte) uint32 {
 	return hash
 }
 
-// map_newnode - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:131
+// map_newnode - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:132
 func map_newnode(key *byte, value unsafe.Pointer, vsize int32) *map_node_t {
 	var node *map_node_t
 	var ksize int32 = noarch.Strlen(key) + int32(uint32(int32(1)))
@@ -783,7 +784,7 @@ func map_newnode(key *byte, value unsafe.Pointer, vsize int32) *map_node_t {
 	return node
 }
 
-// map_bucketidx - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:145
+// map_bucketidx - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:146
 /* If the implementation is changed to allow a non-power-of-2 bucket count,
  * the line below should be changed to use mod instead of AND */ //
 //
@@ -791,7 +792,7 @@ func map_bucketidx(m *map_base_t, hash uint32) int32 {
 	return int32(hash & ((*m).nbuckets - uint32(int32(1))))
 }
 
-// map_addnode - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:152
+// map_addnode - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:153
 func map_addnode(m *map_base_t, node *map_node_t) {
 	var n int32 = map_bucketidx(m, (*node).hash)
 	(*node).next = *((**map_node_t)(func() unsafe.Pointer {
@@ -804,7 +805,7 @@ func map_addnode(m *map_base_t, node *map_node_t) {
 	}())) = node
 }
 
-// map_resize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:159
+// map_resize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:160
 /* Chain all nodes together */ //
 /* Reset buckets */ //
 /* Re-add nodes to buckets */ //
@@ -858,7 +859,7 @@ func map_resize(m *map_base_t, nbuckets int32) int32 {
 	}()
 }
 
-// map_getref - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:196
+// map_getref - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:197
 func map_getref(m *map_base_t, key *byte) **map_node_t {
 	var hash uint32 = map_hash(key)
 	var next **map_node_t
@@ -880,7 +881,7 @@ func map_getref(m *map_base_t, key *byte) **map_node_t {
 	return nil
 }
 
-// map_deinit_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:212
+// map_deinit_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:213
 func map_deinit_(m *map_base_t) {
 	var next *map_node_t
 	var node *map_node_t
@@ -905,7 +906,7 @@ func map_deinit_(m *map_base_t) {
 	noarch.Free(unsafe.Pointer((*m).buckets))
 }
 
-// map_get_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:228
+// map_get_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:229
 func map_get_(m *map_base_t, key *byte) unsafe.Pointer {
 	var next **map_node_t = map_getref(m, key)
 	return func() unsafe.Pointer {
@@ -917,7 +918,7 @@ func map_get_(m *map_base_t, key *byte) unsafe.Pointer {
 	}()
 }
 
-// map_set_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:234
+// map_set_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:235
 /* Find & replace existing node */ //
 /* Add new node */ //
 //
@@ -959,7 +960,7 @@ fail:
 	return -int32(1)
 }
 
-// map_remove_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:260
+// map_remove_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:261
 func map_remove_(m *map_base_t, key *byte) {
 	var node *map_node_t
 	var next **map_node_t = map_getref(m, key)
@@ -971,7 +972,7 @@ func map_remove_(m *map_base_t, key *byte) {
 	}
 }
 
-// map_iter_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:272
+// map_iter_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:273
 func map_iter_() map_iter_t {
 	var iter map_iter_t
 	iter.bucketidx = uint32(int32(2147483647))*uint32(2) + uint32(1)
@@ -979,7 +980,7 @@ func map_iter_() map_iter_t {
 	return map_iter_t(iter)
 }
 
-// map_next_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:280
+// map_next_ - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:281
 func map_next_(m *map_base_t, iter *map_iter_t) *byte {
 	if (*iter).node == nil || (func() *map_node_t {
 		(*iter).node = (*(*iter).node).next
@@ -1012,7 +1013,7 @@ var quiet int8 = int8((int8(int32(0))))
 var allocations int64 = int64(int32(0))
 var allocations_total int64 = int64(int32(0))
 
-// string_duplicate - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:333
+// string_duplicate - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:334
 /* Heap. */ //
 //
 func string_duplicate(str *byte) *byte {
@@ -1101,7 +1102,7 @@ var p_apply *Object_s = nil
 var p_defglobal *Object_s = nil
 var p_dot_symbol_dump *Object_s = nil
 
-// nilp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:400
+// nilp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:401
 /* Forward references. */ //
 /* Objects (lists, atoms, etc.). */ //
 /* Head item in this list, unless a BUILTIN_CAR node. */ //
@@ -1117,80 +1118,80 @@ func nilp(list *Object_s) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int64(uintptr(unsafe.Pointer(list))) == int64(uintptr(unsafe.Pointer(p_nil)))])))
 }
 
-// atomp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:406
+// atomp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:407
 /* Whether object is an atom in the traditional Lisp sense */ //
 //
 func atomp(list *Object_s) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int32(int8((nilp(list)))) != 0 || int64(uintptr(unsafe.Pointer((*list).car))) == int64(uintptr(unsafe.Pointer(p_atomic)))])))
 }
 
-// atomicp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:412
+// atomicp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:413
 /* Whether object is an atom in this implementation */ //
 //
 func atomicp(list *Object_s) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int8((noarch.NotInt8(nilp(list)))) != 0 && int64(uintptr(unsafe.Pointer((*list).car))) == int64(uintptr(unsafe.Pointer(p_atomic)))])))
 }
 
-// compiledp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:417
+// compiledp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:418
 func compiledp(list *Object_s) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int8((noarch.NotInt8(atomp(list)))) != 0 && int64(uintptr(unsafe.Pointer((*list).car))) == int64(uintptr(unsafe.Pointer(p_compiled)))])))
 }
 
-// listp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:422
+// listp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:423
 func listp(list *Object_s) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int8((noarch.NotInt8(atomp(list)))) != 0 && int8((noarch.NotInt8(compiledp(list)))) != 0])))
 }
 
-// finalp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:427
+// finalp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:428
 func finalp(list *Object_s) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int32(int8((listp(list)))) != 0 && int32(int8((nilp((*(*list).cdr.obj()))))) != 0])))
 }
 
-// list_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:432
+// list_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:433
 func list_car(list *Object_s) *Object_s {
 	func() {
 		if int32(int8((listp(list)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(list)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(434)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(list)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(435)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return (*list).car
 }
 
-// list_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:438
+// list_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:439
 func list_cdr(list *Object_s) *Object_s {
 	func() {
 		if int32(int8((listp(list)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(list)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(440)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(list)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(441)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return (*(*list).cdr.obj())
 }
 
-// object_symbol - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:444
+// object_symbol - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:445
 func object_symbol(atom *Object_s) *Symbol_s {
 	func() {
 		if int32(int8((atomicp(atom)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(atom)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(446)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(atom)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(447)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return (*(*atom).cdr.sym())
 }
 
-// object_compiled - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:450
+// object_compiled - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:451
 func object_compiled(compiled *Object_s) compiled_fn {
 	func() {
 		if int32(int8((compiledp(compiled)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("compiledp(compiled)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(452)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("compiledp(compiled)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(453)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return compiled_fn((*(*compiled).cdr.fn()))
 }
 
-// object_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:456
+// object_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:457
 func object_new(car *Object_s, cdr *Object_s) *Object_s {
 	var obj *Object_s
 	obj = (*Object_s)(noarch.Malloc(int32(16)))
@@ -1216,7 +1217,7 @@ func object_new(car *Object_s, cdr *Object_s) *Object_s {
 	return obj
 }
 
-// object_new_compiled - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:473
+// object_new_compiled - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:474
 func object_new_compiled(fn compiled_fn) *Object_s {
 	var obj *Object_s
 	obj = (*Object_s)(noarch.Malloc(int32(16)))
@@ -1242,7 +1243,7 @@ func object_new_compiled(fn compiled_fn) *Object_s {
 	return obj
 }
 
-// symbol_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:498
+// symbol_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:499
 /* Symbols. */ //
 //
 func symbol_new(name *byte) *Symbol_s {
@@ -1277,7 +1278,7 @@ type map_sym_t struct {
 
 var map_sym map_sym_t
 
-// symbol_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:519
+// symbol_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:520
 /* Map of symbols (keys) to values. */ //
 //
 func symbol_lookup(name *byte) *Symbol_s {
@@ -1296,7 +1297,7 @@ func symbol_lookup(name *byte) *Symbol_s {
 
 var symbol_strdup int8 = int8((int8(int32(1))))
 
-// symbol_sym - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:528
+// symbol_sym - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:529
 func symbol_sym(name *byte) *Symbol_s {
 	var sym *Symbol_s = symbol_lookup(name)
 	if sym != nil {
@@ -1317,7 +1318,7 @@ func symbol_sym(name *byte) *Symbol_s {
 	return sym
 }
 
-// symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:542
+// symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:543
 func symbol_dump() {
 	var iter map_iter_t = map_iter_()
 	var key *byte
@@ -1333,20 +1334,20 @@ func symbol_dump() {
 var p_sym_t *Symbol_s = nil
 var p_sym_quote *Symbol_s = nil
 
-// binding_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:558
+// binding_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:559
 /* Environment (bindings). */ //
 //
 func binding_new(sym *Object_s, val *Object_s) *Object_s {
 	func() {
 		if int32(int8((atomicp(sym)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(560)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(561)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return object_new(sym, val)
 }
 
-// binding_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:571
+// binding_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:572
 /* Bindings; each binding is either an atom (meaning its symbol is
    explicitly unbound) or a key/value cons (the symbol is in the car,
    its binding is in the cdr). */ //
@@ -1362,7 +1363,7 @@ func binding_lookup(what *byte, key *Symbol_s, bindings *Object_s) *Object_s {
 	func() {
 		if int32(int8((listp(bindings)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(bindings)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(576)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(bindings)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(577)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	for ; int8((noarch.NotInt8(nilp(bindings)))) != 0; bindings = list_cdr(bindings) {
@@ -1389,7 +1390,7 @@ type buffer_s struct {
 	contents *byte
 }
 
-// buffer_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:611
+// buffer_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:612
 /* Input */ //
 //
 func buffer_new(initial_size size_t) *buffer_s {
@@ -1416,7 +1417,7 @@ func buffer_new(initial_size size_t) *buffer_s {
 	return buf
 }
 
-// buffer_append - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:626
+// buffer_append - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:627
 /* TODO: realloc() */ //
 //
 func buffer_append(buf *buffer_s, ch byte) {
@@ -1447,18 +1448,18 @@ func buffer_append(buf *buffer_s, ch byte) {
 	}())) = ch
 }
 
-// buffer_tostring - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:633
+// buffer_tostring - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:634
 func buffer_tostring(buf *buffer_s) *byte {
 	buffer_append(buf, '\x00')
 	return (*buf).contents
 }
 
-// token_putback - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:641
+// token_putback - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:642
 func token_putback(token *byte) {
 	func() {
 		if (map[bool]int32{false: 0, true: 1}[lookahead_valid == int32(0)]) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("lookahead_valid == 0\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(643)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("lookahead_valid == 0\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(644)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	token_lookahead = token
@@ -1468,7 +1469,7 @@ func token_putback(token *byte) {
 var my_getc_next int32
 var my_getc_file *noarch.File
 
-// my_getc - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:651
+// my_getc - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:652
 func my_getc(input *noarch.File) int32 {
 	if int64(uintptr(unsafe.Pointer(my_getc_file))) == int64(uintptr(unsafe.Pointer(input))) {
 		my_getc_file = nil
@@ -1477,25 +1478,25 @@ func my_getc(input *noarch.File) int32 {
 	func() {
 		if (map[bool]int32{false: 0, true: 1}[my_getc_file == nil || (&[]byte("No support for un-getting on two streams at the same time\x00")[0]) == nil]) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("!my_getc_file || (\"No support for un-getting on two streams at the same time\" == NULL)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(659)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("!my_getc_file || (\"No support for un-getting on two streams at the same time\" == NULL)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(660)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return noarch.Fgetc(input)
 }
 
-// my_ungetc - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:664
+// my_ungetc - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:665
 func my_ungetc(ch int32, input *noarch.File) {
 	func() {
 		if (map[bool]int32{false: 0, true: 1}[my_getc_file == nil || (&[]byte("No support for un-getting on two streams at the same time\x00")[0]) == nil]) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("!my_getc_file || (\"No support for un-getting on two streams at the same time\" == NULL)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(667)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("!my_getc_file || (\"No support for un-getting on two streams at the same time\" == NULL)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(668)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	my_getc_file = input
 	my_getc_next = ch
 }
 
-// token_get - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:673
+// token_get - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:674
 func token_get(input *noarch.File, buf *buffer_s) (c2goDefaultReturn *byte) {
 	var ch int32
 	func() size_t {
@@ -1577,7 +1578,7 @@ func token_get(input *noarch.File, buf *buffer_s) (c2goDefaultReturn *byte) {
 	return
 }
 
-// object_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:713
+// object_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:714
 func object_read(input *noarch.File, buf *buffer_s) *Object_s {
 	var token *byte
 	token = token_get(input, buf)
@@ -1606,7 +1607,7 @@ func object_read(input *noarch.File, buf *buffer_s) *Object_s {
 	return object_new(p_atomic, (*Object_s)(unsafe.Pointer((symbol_sym(token)))))
 }
 
-// list_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:736
+// list_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:737
 /* Make sure we first read the object before going on to read the rest of the list. */ //
 //
 func list_read(input *noarch.File, buf *buffer_s) *Object_s {
@@ -1639,7 +1640,7 @@ func list_read(input *noarch.File, buf *buffer_s) *Object_s {
 	return object_new(tmp, list_read(input, buf))
 }
 
-// quotep - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:761
+// quotep - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:762
 /* Output. */ //
 /* true if object is (quote arg) */ //
 /* TODO: Decide whether this look up quote in the current env to do the check */ //
@@ -1655,7 +1656,7 @@ func quotep(obj *Object_s) (c2goDefaultReturn int8) {
 	return
 }
 
-// object_write - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:773
+// object_write - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:774
 /* TODO: Print name of function. */ //
 //
 func object_write(output *noarch.File, obj *Object_s) {
@@ -1694,7 +1695,7 @@ func object_write(output *noarch.File, obj *Object_s) {
 	}
 }
 
-// binding_for - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:827
+// binding_for - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:828
 /* Evaluation */ //
 /* TODO: Throw an exception etc. */ //
 //
@@ -1706,14 +1707,14 @@ func binding_for(what *byte, sym *Symbol_s, env *Object_s) *Object_s {
 		func() {
 			if (map[bool]int32{false: 0, true: 1}[(&[]byte("unbound symbol\x00")[0]) == nil]) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("\"unbound symbol\" == NULL\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(836)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("\"unbound symbol\" == NULL\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(837)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 	}
 	return list_cdr(tmp)
 }
 
-// eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:846
+// eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:847
 /* Does not support traditional lambdas or labels; just the built-ins and
    our "unique" apply.  */ //
 //
@@ -1727,7 +1728,7 @@ func eval(what *byte, exp *Object_s, env *Object_s) (c2goDefaultReturn *Object_s
 	func() {
 		if int32(int8((listp(exp)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(exp)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(854)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(exp)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(855)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1746,7 +1747,7 @@ func eval(what *byte, exp *Object_s, env *Object_s) (c2goDefaultReturn *Object_s
 	return
 }
 
-// assert_zedbap - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:908
+// assert_zedbap - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:909
 /* Need to solve these problems:
 
    (defun x (a) (progn (setq a 6) (a)))
@@ -1786,48 +1787,48 @@ func assert_zedbap(zedba *Object_s) {
 	func() {
 		if int32(int8((listp(zedba)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(zedba)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(910)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(zedba)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(911)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((listp(list_car(zedba))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(list_car(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(912)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(list_car(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(913)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((atomicp(list_car(list_car(zedba)))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(list_car(list_car(zedba)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(913)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(list_car(list_car(zedba)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(914)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((atomicp(list_car(list_cdr(list_car(zedba))))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(914)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(915)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((atomicp(list_car(list_cdr(list_cdr(list_car(zedba)))))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_cdr(list_car(zedba)))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(915)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_cdr(list_car(zedba)))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(916)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(list_cdr(list_car(zedba))))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(916)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(917)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(zedba))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(918)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(919)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 }
 
-// apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:934
+// apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:935
 /* Apply a zedba, which is an self/arglist/env macro version of the
    classic lambda.  The form of a zedba is
 
@@ -1852,21 +1853,21 @@ func apply(what *byte, func_ *Object_s, me *Object_s, forms *Object_s, env *Obje
 		func() {
 			if int32(int8((listp(params)))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(params)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(946)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(params)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(947)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		meparamname = list_car(params)
 		func() {
 			if int32(int8((listp(list_cdr(params))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(list_cdr(params))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(950)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(list_cdr(params))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(951)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		formlistparamname = list_car(list_cdr(params))
 		func() {
 			if int32(int8((finalp(list_cdr(list_cdr(params)))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(params)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(954)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(params)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(955)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		envparamname = list_car(list_cdr(list_cdr(params)))
@@ -1874,27 +1875,27 @@ func apply(what *byte, func_ *Object_s, me *Object_s, forms *Object_s, env *Obje
 	return eval(what, list_car(list_cdr(func_)), (object_new(binding_new((meparamname), (func_)), (object_new(binding_new((formlistparamname), (forms)), (object_new(binding_new((envparamname), (env)), (env))))))))
 }
 
-// f_quote - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:967
+// f_quote - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:968
 /* (quote form) => form */ //
 //
 func f_quote(what *byte, args *Object_s, env *Object_s) *Object_s {
 	func() {
 		if int32(int8((finalp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(969)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(970)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return list_car(args)
 }
 
-// f_atom - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:975
+// f_atom - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:976
 /* (atom atom) => t if atom is an atom (including nil), nil otherwise */ //
 //
 func f_atom(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_s) {
 	func() {
 		if int32(int8((finalp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(977)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(978)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1910,7 +1911,7 @@ func f_atom(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Objec
 	return
 }
 
-// f_eq - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:987
+// f_eq - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:988
 /* (eq left-atom right-atom) => t if args are equal, nil otherwise */ //
 /* All nils are equal to each other in this implementation */ //
 //
@@ -1918,13 +1919,13 @@ func f_eq(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_
 	func() {
 		if int32(int8((listp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(989)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(990)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(990)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(991)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1933,13 +1934,13 @@ func f_eq(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_
 		func() {
 			if int32(int8((atomp(left)))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("atomp(left)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(996)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("atomp(left)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(997)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		func() {
 			if int32(int8((atomp(right)))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("atomp(right)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(997)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("atomp(right)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(998)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		if int64(uintptr(unsafe.Pointer(left))) == int64(uintptr(unsafe.Pointer(right))) {
@@ -1959,20 +1960,20 @@ func f_eq(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_
 	return
 }
 
-// f_cons - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1010
+// f_cons - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1011
 /* (cons car-arg cdr-arg) => (car-arg cdr-arg) */ //
 //
 func f_cons(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_s) {
 	func() {
 		if int32(int8((listp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1012)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1013)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1013)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1014)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1983,14 +1984,14 @@ func f_cons(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Objec
 	return
 }
 
-// f_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1024
+// f_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1025
 /* (car cons-arg) : cons-arg is a list => car of cons-arg */ //
 //
 func f_car(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_s) {
 	func() {
 		if int32(int8((finalp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1026)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1027)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1998,7 +1999,7 @@ func f_car(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object
 		func() {
 			if int32(int8((listp(arg)))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1031)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1032)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		return list_car(arg)
@@ -2006,14 +2007,14 @@ func f_car(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object
 	return
 }
 
-// f_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1038
+// f_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1039
 /* (cdr cons-arg) : cons-arg is a list => cdr of cons-arg */ //
 //
 func f_cdr(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_s) {
 	func() {
 		if int32(int8((finalp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1040)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1041)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -2021,7 +2022,7 @@ func f_cdr(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object
 		func() {
 			if int32(int8((listp(arg)))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1045)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1046)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		return list_cdr(arg)
@@ -2029,7 +2030,7 @@ func f_cdr(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object
 	return
 }
 
-// f_cond - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1055
+// f_cond - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1056
 /* (cond ifthen-args ...) : each ifthen-args is an ifthen-pair; each
    ifthen-pair is a list of form (if-arg then-form) => eval(then-form)
    for the first if-arg in the list that is not nil (true), otherwise
@@ -2042,7 +2043,7 @@ func f_cond(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Objec
 	func() {
 		if int32(int8((listp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1060)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1061)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -2050,13 +2051,13 @@ func f_cond(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Objec
 		func() {
 			if int32(int8((listp(pair)))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(pair)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1065)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(pair)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1066)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		func() {
 			if int32(int8((finalp(list_cdr(pair))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("finalp(list_cdr(pair))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1066)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("finalp(list_cdr(pair))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1067)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		{
@@ -2071,7 +2072,7 @@ func f_cond(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Objec
 	return
 }
 
-// f_defglobal - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1085
+// f_defglobal - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1086
 /* (defglobal) => global environment
    (defglobal newenv) => '() with newenv as the new global environment (SIDE EFFECT)
    (defglobal key value) => '() with new global environment prepended (via cons)
@@ -2087,7 +2088,7 @@ func f_defglobal(what *byte, args *Object_s, env *Object_s) *Object_s {
 	func() {
 		if int32(int8((listp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1090)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1091)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	if int8((nilp(list_cdr(args)))) != 0 {
@@ -2096,7 +2097,7 @@ func f_defglobal(what *byte, args *Object_s, env *Object_s) *Object_s {
 		func() {
 			if int32(int8((finalp(list_cdr(args))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1098)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1099)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		{
@@ -2105,7 +2106,7 @@ func f_defglobal(what *byte, args *Object_s, env *Object_s) *Object_s {
 			func() {
 				if int32(int8((atomicp(sym)))) != 0 {
 				} else {
-					linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1104)), (&[]byte("void print_number(int *)\x00")[0]))
+					linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1105)), (&[]byte("void print_number(int *)\x00")[0]))
 				}
 			}()
 			p_environment = object_new(binding_new((object_new(p_atomic, (*Object_s)(unsafe.Pointer((object_symbol(sym)))))), (form)), (p_environment))
@@ -2114,20 +2115,20 @@ func f_defglobal(what *byte, args *Object_s, env *Object_s) *Object_s {
 	return p_nil
 }
 
-// f_eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1116
+// f_eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1117
 /* (eval arg [env]) => arg evaluated with respect to environment env (default is current env) */ //
 //
 func f_eval(what *byte, args *Object_s, env *Object_s) *Object_s {
 	func() {
 		if int32(int8((listp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1118)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1119)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if (map[bool]int32{false: 0, true: 1}[int32(int8((nilp(list_cdr(args))))) != 0 || int32(int8((finalp(list_cdr(args))))) != 0]) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("nilp(list_cdr(args)) || finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1119)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("nilp(list_cdr(args)) || finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1120)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return eval(what, eval(what, list_car(args), env), func() *Object_s {
@@ -2139,7 +2140,7 @@ func f_eval(what *byte, args *Object_s, env *Object_s) *Object_s {
 	}())
 }
 
-// f_apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1128
+// f_apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1129
 /* (apply zedba me forms [env]) => zedba invoked with reference to
    (presumably) itself, forms to be bound to zedba's arguments, and
    environment for such bindings (default is current env) */ //
@@ -2148,7 +2149,7 @@ func f_apply(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Obje
 	func() {
 		if int32(int8((listp(args)))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1130)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1131)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -2160,7 +2161,7 @@ func f_apply(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Obje
 		func() {
 			if int32(int8((listp(rest)))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1141)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1142)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		{
@@ -2170,7 +2171,7 @@ func f_apply(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Obje
 			func() {
 				if int32(int8((listp(rest)))) != 0 {
 				} else {
-					linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1148)), (&[]byte("void print_number(int *)\x00")[0]))
+					linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1149)), (&[]byte("void print_number(int *)\x00")[0]))
 				}
 			}()
 			{
@@ -2180,7 +2181,7 @@ func f_apply(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Obje
 				func() {
 					if (map[bool]int32{false: 0, true: 1}[int32(int8((nilp(rest)))) != 0 || int32(int8((finalp(rest)))) != 0]) != 0 {
 					} else {
-						linux.AssertFail((&[]byte("nilp(rest) || finalp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1155)), (&[]byte("void print_number(int *)\x00")[0]))
+						linux.AssertFail((&[]byte("nilp(rest) || finalp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1156)), (&[]byte("void print_number(int *)\x00")[0]))
 					}
 				}()
 				return apply(what, func_, me, forms, func() *Object_s {
@@ -2196,21 +2197,21 @@ func f_apply(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Obje
 	return
 }
 
-// f_dot_symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1164
+// f_dot_symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1165
 /* (.symbol_dump) : dump symbol names along with their struct Symbol_s * objects */ //
 //
 func f_dot_symbol_dump(what *byte, args *Object_s, env *Object_s) *Object_s {
 	func() {
 		if (map[bool]int32{false: 0, true: 1}[args == nil]) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("!args\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1166)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("!args\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1167)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	symbol_dump()
 	return p_nil
 }
 
-// initialize_builtin - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1173
+// initialize_builtin - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1174
 func initialize_builtin(sym *byte, fn compiled_fn) *Object_s {
 	var tmp *Object_s
 	p_environment = object_new(binding_new((object_new(p_atomic, (*Object_s)(unsafe.Pointer((symbol_sym(sym)))))), (func() *Object_s {
@@ -2220,7 +2221,7 @@ func initialize_builtin(sym *byte, fn compiled_fn) *Object_s {
 	return tmp
 }
 
-// initialize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1184
+// initialize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1185
 /* TODO: Decide on a better name. */ //
 //
 func initialize() {
@@ -2241,7 +2242,7 @@ func initialize() {
 	symbol_strdup = int8((int8(int32(1))))
 }
 
-// main - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1212
+// main - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1213
 func main() {
 	argc := int32(len(os.Args))
 	argv__multiarray := [][]byte{}
@@ -2253,17 +2254,42 @@ func main() {
 		argv__array = append(argv__array, &argvSingle[0])
 	}
 	argv := *(***byte)(unsafe.Pointer(&argv__array))
+	var filename *byte
+	var in *noarch.File
 	if argc > int32(1) && noarch.NotInt32(noarch.Strcmp(*((**byte)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + (uintptr)(int32(1))*unsafe.Sizeof(*argv)))), (&[]byte("-q\x00")[0]))) != 0 {
 		quiet = int8((int8(int32(1))))
+		argc -= 1
+		argv = ((**byte)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + (uintptr)(1)*unsafe.Sizeof(*argv))))
+	}
+	if argc > int32(1) && int32(**((**byte)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + (uintptr)(int32(1))*unsafe.Sizeof(*argv))))) == int32('-') {
+		noarch.Fprintf(stderr, (&[]byte("Unsupported option: %s\n\x00")[0]), *((**byte)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + (uintptr)(int32(1))*unsafe.Sizeof(*argv)))))
+		os.Exit(int(int32(99)))
+	}
+	if argc == int32(2) {
+		filename = *((**byte)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + (uintptr)(int32(1))*unsafe.Sizeof(*argv))))
+		in = noarch.Fopen(filename, (&[]byte("r\x00")[0]))
+		if in == nil {
+			noarch.Fprintf(stderr, (&[]byte("Cannot open file %s (errno=%d)\n\x00")[0]), filename, (*noarch.Errno()))
+			os.Exit(int(int32(1)))
+		}
+		argc -= 1
+		argv = ((**byte)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + (uintptr)(1)*unsafe.Sizeof(*argv))))
+	} else {
+		filename = (&[]byte("<stdin>\x00")[0])
+		in = stdin
+	}
+	if argc > int32(1) {
+		noarch.Fprintf(stderr, (&[]byte("Excess command-line arguments starting with: %s\n\x00")[0]), *((**byte)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + (uintptr)(int32(1))*unsafe.Sizeof(*argv)))))
+		os.Exit(int(int32(98)))
 	}
 	noarch.Memset(unsafe.Pointer(&map_sym), int32(0), int32(32))
 	var buf *buffer_s
 	initialize()
 	buf = buffer_new(size_t(int32(1000)))
 	for {
-		var obj *Object_s = object_read(stdin, buf)
+		var obj *Object_s = object_read(in, buf)
 		if int8((noarch.NotInt8(quiet))) != 0 {
-			object_write(stdout, eval((&[]byte("stdin\x00")[0]), obj, p_environment))
+			object_write(stdout, eval(filename, obj, p_environment))
 			noarch.Fprintf(stdout, (&[]byte("\n\x00")[0]))
 			noarch.Fflush(stdout)
 		}
@@ -2271,7 +2297,7 @@ func main() {
 	return
 }
 
-// debug_output - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1235
+// debug_output - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1265
 func debug_output(obj *Object_s) {
 	object_write(stdout, obj)
 	noarch.Fprintf(stdout, (&[]byte("\n\x00")[0]))
