@@ -8,7 +8,7 @@
 // Warning (RecordDecl):  /usr/include/libio.h:144 : could not lookup type definition for : _IO_FILE
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{50775056 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{56226832 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -655,7 +655,7 @@ type __compar_d_fn_t func(unsafe.Pointer, unsafe.Pointer, unsafe.Pointer) int32
 
 const // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{50775056 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{56226832 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -1290,18 +1290,17 @@ var map_sym map_sym_t
 /* Map of symbols (keys) to values. */ //
 //
 func symbol_lookup(name *byte) *Symbol_s {
-	var p_sym *Symbol_s = (func() *Symbol_s {
-		tempVar := (*Symbol_s)(map_get_(&(*(&map_sym)).base, name))
-		(*(&map_sym)).ref = tempVar
-		return tempVar
-	}())
-	return func() *Symbol_s {
+	var p_sym *unsafe.Pointer = (*unsafe.Pointer)(unsafe.Pointer((func() *Symbol_s {
+		(*(&map_sym)).ref = (*Symbol_s)(map_get_(&(*(&map_sym)).base, name))
+		return (*(&map_sym)).ref
+	}())))
+	return (*Symbol_s)(func() unsafe.Pointer {
 		if p_sym != nil {
 			return *p_sym
 		} else {
-			return nil
+			return (nil)
 		}
-	}()
+	}())
 }
 
 var symbol_strdup int8 = int8((int8(int32(1))))
