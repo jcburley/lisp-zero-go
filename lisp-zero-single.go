@@ -8,44 +8,46 @@
 // Warning (RecordDecl):  /usr/include/libio.h:144 : could not lookup type definition for : _IO_FILE
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{51794960 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{59909136 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
 // Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:400 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:406 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:411 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:421 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:412 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:417 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:427 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:433 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:439 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:445 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:451 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:458 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
 // Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:459 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:460 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:463 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:465 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:466 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:489 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:503 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Symbol -> p_Symbol':'struct Symbol_s *}. err = Cannot casting {struct Symbol_s * -> p_Symbol':'struct Symbol_s *}. err = Cannot resolve type 'p_Symbol':'struct Symbol_s *' : Cannot resolve type 'p_Symbol':'struct Symbol_s' : I couldn't find an appropriate Go type for the C type 'p_Symbol':'struct Symbol_s'.
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:495 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:509 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Symbol -> p_Symbol':'struct Symbol_s *}. err = Cannot casting {struct Symbol_s * -> p_Symbol':'struct Symbol_s *}. err = Cannot resolve type 'p_Symbol':'struct Symbol_s *' : Cannot resolve type 'p_Symbol':'struct Symbol_s' : I couldn't find an appropriate Go type for the C type 'p_Symbol':'struct Symbol_s'.
 // Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:599 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:600 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:601 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:608 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:605 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:606 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:607 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:614 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 // Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:610 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:616 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:631 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:622 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:637 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 // Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:738 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:790 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:817 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:937 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:960 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1076 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:1093 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1112 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:744 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:796 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:823 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:943 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:966 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1082 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:1099 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1118 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
 
 package main
 
@@ -678,7 +680,7 @@ type __compar_d_fn_t func(unsafe.Pointer, unsafe.Pointer, unsafe.Pointer) int32
 
 const // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{51794960 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{59909136 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -1074,12 +1076,78 @@ func string_duplicate(str *byte) *byte {
 
 type p_Symbol *Symbol_s
 type p_Object *Object_s
+type compiled_fn func(*byte, p_Object, p_Object) p_Object
+type Cdr_s struct{ memory unsafe.Pointer }
+
+func (unionVar *Cdr_s) copy() Cdr_s {
+	var buffer [8]byte
+	for i := range buffer {
+		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
+	}
+	var newUnion Cdr_s
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
+}
+func (unionVar *Cdr_s) obj() *p_Object {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*p_Object)(unionVar.memory)
+}
+func (unionVar *Cdr_s) sym() *p_Symbol {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*p_Symbol)(unionVar.memory)
+}
+func (unionVar *Cdr_s) fn() *compiled_fn {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*compiled_fn)(unionVar.memory)
+}
+
+type Cdr_t struct{ memory unsafe.Pointer }
+
+func (unionVar *Cdr_t) copy() Cdr_t {
+	var buffer [8]byte
+	for i := range buffer {
+		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
+	}
+	var newUnion Cdr_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
+}
+func (unionVar *Cdr_t) obj() *p_Object {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*p_Object)(unionVar.memory)
+}
+func (unionVar *Cdr_t) sym() *p_Symbol {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*p_Symbol)(unionVar.memory)
+}
+func (unionVar *Cdr_t) fn() *compiled_fn {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*compiled_fn)(unionVar.memory)
+}
+
 type Object_s struct {
 	car p_Object
-	cdr p_Object
+	cdr Cdr_t
 }
 type Object Object_s
-type compiled_fn func(*byte, p_Object, p_Object) p_Object
 
 var atomic Object
 var p_atomic p_Object = p_Object(((*Object_s)(unsafe.Pointer(&atomic))))
@@ -1099,7 +1167,7 @@ var p_apply p_Object = p_Object((nil))
 var p_defglobal p_Object = p_Object((nil))
 var p_dot_symbol_dump p_Object = p_Object((nil))
 
-// nilp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:392
+// nilp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:398
 /* Forward references. */ //
 /* Objects (lists, atoms, etc.). */ //
 /* Head item in this list, unless a BUILTIN_CAR node. */ //
@@ -1115,96 +1183,98 @@ func nilp(list p_Object) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int64(uintptr(unsafe.Pointer(*Object_s((list))))) == int64(uintptr(unsafe.Pointer(*Object_s((p_nil)))))])))
 }
 
-// atomp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:398
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:400 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// atomp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:404
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:406 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 /* Whether object is an atom in the traditional Lisp sense */ //
 //
 func atomp(list p_Object) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int32(int8((nilp(p_Object(list))))) != 0 || int64(uintptr(unsafe.Pointer(*Object_s((p_Object((*p_Object(list)).car)))))) == int64(uintptr(unsafe.Pointer(*Object_s((p_atomic)))))])))
 }
 
-// atomicp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:404
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:406 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// atomicp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:410
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:412 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 /* Whether object is an atom in this implementation */ //
 //
 func atomicp(list p_Object) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int8((noarch.NotInt8(nilp(p_Object(list))))) != 0 && int64(uintptr(unsafe.Pointer(*Object_s((p_Object((*p_Object(list)).car)))))) == int64(uintptr(unsafe.Pointer(*Object_s((p_atomic)))))])))
 }
 
-// compiledp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:409
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:411 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// compiledp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:415
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:417 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 func compiledp(list p_Object) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int8((noarch.NotInt8(atomp(p_Object(list))))) != 0 && int64(uintptr(unsafe.Pointer(*Object_s((p_Object((*p_Object(list)).car)))))) == int64(uintptr(unsafe.Pointer(*Object_s((p_compiled)))))])))
 }
 
-// listp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:414
+// listp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:420
 func listp(list p_Object) int8 {
 	return int8((int8(map[bool]int32{false: 0, true: 1}[int8((noarch.NotInt8(atomp(p_Object(list))))) != 0 && int8((noarch.NotInt8(compiledp(p_Object(list))))) != 0])))
 }
 
-// finalp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:419
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:421 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-func finalp(list p_Object) int8 {
-	return int8((int8(map[bool]int32{false: 0, true: 1}[int32(int8((listp(p_Object(list))))) != 0 && int32(int8((nilp(p_Object((*p_Object(list)).cdr))))) != 0])))
-}
-
-// list_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:424
+// finalp - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:425
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:427 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-func list_car(list p_Object) p_Object {
-	func() {
-		if int32(int8((listp(p_Object(list))))) != 0 {
-		} else {
-			linux.AssertFail((&[]byte("listp(list)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(426)), (&[]byte("void print_number(int *)\x00")[0]))
-		}
-	}()
-	return p_Object((*p_Object(list)).car)
+func finalp(list p_Object) int8 {
+	return int8((int8(map[bool]int32{false: 0, true: 1}[int32(int8((listp(p_Object(list))))) != 0 && int32(int8((nilp(p_Object((*(*p_Object(list)).cdr.obj())))))) != 0])))
 }
 
-// list_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:430
+// list_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:430
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:433 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-func list_cdr(list p_Object) p_Object {
+func list_car(list p_Object) p_Object {
 	func() {
 		if int32(int8((listp(p_Object(list))))) != 0 {
 		} else {
 			linux.AssertFail((&[]byte("listp(list)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(432)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
-	return p_Object((*p_Object(list)).cdr)
+	return p_Object((*p_Object(list)).car)
 }
 
-// object_symbol - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:436
+// list_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:436
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:439 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+func list_cdr(list p_Object) p_Object {
+	func() {
+		if int32(int8((listp(p_Object(list))))) != 0 {
+		} else {
+			linux.AssertFail((&[]byte("listp(list)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(438)), (&[]byte("void print_number(int *)\x00")[0]))
+		}
+	}()
+	return p_Object((*(*p_Object(list)).cdr.obj()))
+}
+
+// object_symbol - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:442
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:445 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 func object_symbol(atom p_Object) p_Symbol {
 	func() {
 		if int32(int8((atomicp(p_Object(atom))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(atom)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(438)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(atom)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(444)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
-	return p_Symbol(p_Object((*p_Object(atom)).cdr))
+	return p_Symbol((*(*p_Object(atom)).cdr.sym()))
 }
 
-// object_compiled - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:442
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:445 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// object_compiled - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:448
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:451 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 func object_compiled(compiled p_Object) compiled_fn {
 	func() {
 		if int32(int8((compiledp(p_Object(compiled))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("compiledp(compiled)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(444)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("compiledp(compiled)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(450)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
-	return compiled_fn(p_Object((*p_Object(compiled)).cdr))
+	return compiled_fn((*(*p_Object(compiled)).cdr.fn()))
 }
 
-// object_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:448
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:459 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:460 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// object_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:454
+// Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:463 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:465 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:466 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 func object_new(car p_Object, cdr p_Object) p_Object {
 	var obj p_Object
-	obj = (p_Object)(noarch.Malloc(int32(16)))
+	obj = (p_Object)(noarch.Malloc(int32(0)))
 	if *Object_s((noarch.NotP_Object(p_Object(obj)))) != nil {
 		for {
-			var // Warning: using unsafe slice cast to convert from []byte to []byte
+			var // Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:458 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
+			// Warning: using unsafe slice cast to convert from []byte to []byte
 			m *byte = (&[]byte("no more memory\x00")[0])
 			if m != nil {
 				noarch.Fprintf(stderr, (&[]byte("%s\n\x00")[0]), m)
@@ -1219,9 +1289,9 @@ func object_new(car p_Object, cdr p_Object) p_Object {
 		}
 	}
 	allocations += 1
-	allocations_total += int64(uint64(16))
+	allocations_total += int64(uint64(0))
 	(*p_Object(obj)).car = car
-	(*p_Object(obj)).cdr = cdr
+	(*(*p_Object(obj)).cdr.obj()) = cdr
 	return p_Object(obj)
 }
 
@@ -1230,8 +1300,8 @@ type Symbol_s struct {
 }
 type Symbol Symbol_s
 
-// symbol_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:478
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:489 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// symbol_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:484
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:495 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
 /* Symbols. */ //
 //
 func symbol_new(name *byte) p_Symbol {
@@ -1267,8 +1337,8 @@ type map_sym_t struct {
 
 var map_sym map_sym_t
 
-// symbol_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:499
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:503 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Symbol -> p_Symbol':'struct Symbol_s *}. err = Cannot casting {struct Symbol_s * -> p_Symbol':'struct Symbol_s *}. err = Cannot resolve type 'p_Symbol':'struct Symbol_s *' : Cannot resolve type 'p_Symbol':'struct Symbol_s' : I couldn't find an appropriate Go type for the C type 'p_Symbol':'struct Symbol_s'.
+// symbol_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:505
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:509 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Symbol -> p_Symbol':'struct Symbol_s *}. err = Cannot casting {struct Symbol_s * -> p_Symbol':'struct Symbol_s *}. err = Cannot resolve type 'p_Symbol':'struct Symbol_s *' : Cannot resolve type 'p_Symbol':'struct Symbol_s' : I couldn't find an appropriate Go type for the C type 'p_Symbol':'struct Symbol_s'.
 /* Map of symbols (keys) to values. */ //
 //
 func symbol_lookup(name *byte) (c2goDefaultReturn p_Symbol) {
@@ -1282,7 +1352,7 @@ func symbol_lookup(name *byte) (c2goDefaultReturn p_Symbol) {
 
 var symbol_strdup int8 = int8((int8(int32(1))))
 
-// symbol_sym - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:508
+// symbol_sym - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:514
 func symbol_sym(name *byte) p_Symbol {
 	var sym p_Symbol = symbol_lookup(name)
 	if *Symbol_s((p_Symbol(sym))) != nil {
@@ -1303,7 +1373,7 @@ func symbol_sym(name *byte) p_Symbol {
 	return p_Symbol(sym)
 }
 
-// symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:522
+// symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:528
 func symbol_dump() {
 	var iter map_iter_t = map_iter_()
 	var key *byte
@@ -1319,20 +1389,20 @@ func symbol_dump() {
 var p_sym_t p_Symbol = p_Symbol((nil))
 var p_sym_quote p_Symbol = p_Symbol((nil))
 
-// binding_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:538
+// binding_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:544
 /* Environment (bindings). */ //
 //
 func binding_new(sym p_Object, val p_Object) p_Object {
 	func() {
 		if int32(int8((atomicp(p_Object(sym))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(540)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(546)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return object_new(p_Object(sym), p_Object(val))
 }
 
-// binding_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:551
+// binding_lookup - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:557
 /* Bindings; each binding is either an atom (meaning its symbol is
    explicitly unbound) or a key/value cons (the symbol is in the car,
    its binding is in the cdr). */ //
@@ -1348,7 +1418,7 @@ func binding_lookup(what *byte, key p_Symbol, bindings p_Object) p_Object {
 	func() {
 		if int32(int8((listp(p_Object(bindings))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(bindings)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(556)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(bindings)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(562)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	for ; int8((noarch.NotInt8(nilp(p_Object(bindings))))) != 0; bindings = list_cdr(p_Object(bindings)) {
@@ -1376,10 +1446,10 @@ type buffer_s struct {
 }
 type buffer *buffer_s
 
-// buffer_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:591
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:599 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:600 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:601 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// buffer_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:597
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:605 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:606 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:607 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 /* Input */ //
 //
 func buffer_new(initial_size size_t) buffer {
@@ -1407,14 +1477,14 @@ func buffer_new(initial_size size_t) buffer {
 	return buffer(buf)
 }
 
-// buffer_append - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:606
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:610 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// buffer_append - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:612
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:616 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 /* TODO: realloc() */ //
 //
 func buffer_append(buf buffer, ch byte) {
 	if size_t((*buffer(buf)).used) >= size_t((*buffer(buf)).size) {
 		for {
-			var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:608 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+			var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:614 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 			// Warning: using unsafe slice cast to convert from []byte to []byte
 			m *byte = (&[]byte("lexeme too long for this build\x00")[0])
 			if m != nil {
@@ -1441,26 +1511,26 @@ func buffer_append(buf buffer, ch byte) {
 	}())) = ch
 }
 
-// buffer_tostring - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:613
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:616 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+// buffer_tostring - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:619
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:622 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 func buffer_tostring(buf buffer) *byte {
 	buffer_append(buffer(buf), '\x00')
 	return (*buffer(buf)).contents
 }
 
-// token_putback - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:621
+// token_putback - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:627
 func token_putback(token *byte) {
 	func() {
 		if (map[bool]int32{false: 0, true: 1}[lookahead_valid == int32(0)]) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("lookahead_valid == 0\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(623)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("lookahead_valid == 0\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(629)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	token_lookahead = token
 	lookahead_valid = int32(1)
 }
 
-// token_get - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:628
+// token_get - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:634
 func token_get(input *noarch.File, buf buffer) (c2goDefaultReturn *byte) {
 	var ch int32
 	func() size_t {
@@ -1478,7 +1548,7 @@ func token_get(input *noarch.File, buf buffer) (c2goDefaultReturn *byte) {
 			return tempVar
 		}()) == -int32(1) {
 			for {
-				var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:631 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
+				var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:637 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 				m *byte = nil
 				if m != nil {
 					noarch.Fprintf(stderr, (&[]byte("%s\n\x00")[0]), m)
@@ -1543,7 +1613,7 @@ func token_get(input *noarch.File, buf buffer) (c2goDefaultReturn *byte) {
 	return
 }
 
-// object_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:668
+// object_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:674
 func object_read(input *noarch.File, buf buffer) p_Object {
 	var token *byte
 	token = token_get(input, buffer(buf))
@@ -1573,7 +1643,7 @@ func object_read(input *noarch.File, buf buffer) p_Object {
 	return object_new(p_Object(p_atomic), p_Object((symbol_sym(token))))
 }
 
-// list_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:691
+// list_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:697
 /* Make sure we first read the object before going on to read the rest of the list. */ //
 //
 func list_read(input *noarch.File, buf buffer) p_Object {
@@ -1606,7 +1676,7 @@ func list_read(input *noarch.File, buf buffer) p_Object {
 	return object_new(p_Object(tmp), list_read(input, buffer(buf)))
 }
 
-// quotep - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:716
+// quotep - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:722
 /* Output. */ //
 /* true if object is (quote arg) */ //
 /* TODO: Decide whether this look up quote in the current env to do the check */ //
@@ -1622,8 +1692,8 @@ func quotep(obj p_Object) (c2goDefaultReturn int8) {
 	return
 }
 
-// object_write - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:728
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:738 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// object_write - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:734
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:744 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
 /* TODO: Print name of function. */ //
 //
 func object_write(output *noarch.File, obj p_Object) {
@@ -1662,8 +1732,8 @@ func object_write(output *noarch.File, obj p_Object) {
 	}
 }
 
-// binding_for - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:782
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:790 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+// binding_for - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:788
+// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:796 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
 /* Evaluation */ //
 /* TODO: Throw an exception etc. */ //
 //
@@ -1675,14 +1745,14 @@ func binding_for(what *byte, sym p_Symbol, env p_Object) p_Object {
 		func() {
 			if (map[bool]int32{false: 0, true: 1}[(&[]byte("unbound symbol\x00")[0]) == nil]) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("\"unbound symbol\" == NULL\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(791)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("\"unbound symbol\" == NULL\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(797)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 	}
 	return list_cdr(p_Object(tmp))
 }
 
-// eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:801
+// eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:807
 /* Does not support traditional lambdas or labels; just the built-ins and
    our "unique" apply.  */ //
 //
@@ -1696,7 +1766,7 @@ func eval(what *byte, exp p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 	func() {
 		if int32(int8((listp(p_Object(exp))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(exp)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(809)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(exp)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(815)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1706,7 +1776,7 @@ func eval(what *byte, exp p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 			what = (*(object_symbol(list_car(p_Object(exp))))).name
 		}
 		if int8((compiledp(p_Object(func_)))) != 0 {
-			var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:817 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+			var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:823 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
 			fn compiled_fn
 			fn = object_compiled(p_Object(func_))
 			return fn(what, p_Object(forms), p_Object(env))
@@ -1716,7 +1786,7 @@ func eval(what *byte, exp p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 	return
 }
 
-// assert_zedbap - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:863
+// assert_zedbap - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:869
 /* Need to solve these problems:
 
    (defun x (a) (progn (setq a 6) (a)))
@@ -1756,48 +1826,48 @@ func assert_zedbap(zedba p_Object) {
 	func() {
 		if int32(int8((listp(p_Object(zedba))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(zedba)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(865)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(zedba)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(871)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((listp(list_car(p_Object(zedba)))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(list_car(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(867)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(list_car(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(873)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((atomicp(list_car(list_car(p_Object(zedba))))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(list_car(list_car(zedba)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(868)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(list_car(list_car(zedba)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(874)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((atomicp(list_car(list_cdr(list_car(p_Object(zedba)))))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(869)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(875)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((atomicp(list_car(list_cdr(list_cdr(list_car(p_Object(zedba))))))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_cdr(list_car(zedba)))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(870)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("atomicp(list_car(list_cdr(list_cdr(list_car(zedba)))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(876)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(list_cdr(list_car(p_Object(zedba)))))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(871)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(list_car(zedba))))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(877)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(p_Object(zedba)))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(873)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(zedba))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(879)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 }
 
-// apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:889
+// apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:895
 /* Apply a zedba, which is an self/arglist/env macro version of the
    classic lambda.  The form of a zedba is
 
@@ -1822,21 +1892,21 @@ func apply(what *byte, func_ p_Object, me p_Object, forms p_Object, env p_Object
 		func() {
 			if int32(int8((listp(p_Object(params))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(params)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(901)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(params)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(907)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		meparamname = list_car(p_Object(params))
 		func() {
 			if int32(int8((listp(list_cdr(p_Object(params)))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(list_cdr(params))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(905)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(list_cdr(params))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(911)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		formlistparamname = list_car(list_cdr(p_Object(params)))
 		func() {
 			if int32(int8((finalp(list_cdr(list_cdr(p_Object(params))))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(params)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(909)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("finalp(list_cdr(list_cdr(params)))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(915)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		envparamname = list_car(list_cdr(list_cdr(p_Object(params))))
@@ -1844,28 +1914,28 @@ func apply(what *byte, func_ p_Object, me p_Object, forms p_Object, env p_Object
 	return eval(what, list_car(list_cdr(p_Object(func_))), (object_new(binding_new(p_Object((meparamname)), p_Object((func_))), (object_new(binding_new(p_Object((formlistparamname)), p_Object((forms))), (object_new(binding_new(p_Object((envparamname)), p_Object((env))), p_Object((env)))))))))
 }
 
-// f_quote - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:922
+// f_quote - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:928
 /* (quote form) => form */ //
 //
 func f_quote(what *byte, args p_Object, env p_Object) p_Object {
 	func() {
 		if int32(int8((finalp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(924)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(930)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return list_car(p_Object(args))
 }
 
-// f_atom - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:930
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:937 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// f_atom - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:936
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:943 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
 /* (atom atom) => t if atom is an atom (including nil), nil otherwise */ //
 //
 func f_atom(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 	func() {
 		if int32(int8((finalp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(932)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(938)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1874,8 +1944,8 @@ func f_atom(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object
 	return
 }
 
-// f_eq - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:942
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:960 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// f_eq - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:948
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:966 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
 /* (eq left-atom right-atom) => t if args are equal, nil otherwise */ //
 /* All nils are equal to each other in this implementation */ //
 //
@@ -1883,13 +1953,13 @@ func f_eq(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) 
 	func() {
 		if int32(int8((listp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(944)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(950)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(p_Object(args)))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(945)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(951)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1898,13 +1968,13 @@ func f_eq(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) 
 		func() {
 			if int32(int8((atomp(p_Object(left))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("atomp(left)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(951)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("atomp(left)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(957)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		func() {
 			if int32(int8((atomp(p_Object(right))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("atomp(right)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(952)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("atomp(right)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(958)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		if int64(uintptr(unsafe.Pointer(*Object_s((left))))) == int64(uintptr(unsafe.Pointer(*Object_s((right))))) {
@@ -1917,20 +1987,20 @@ func f_eq(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) 
 	return
 }
 
-// f_cons - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:965
+// f_cons - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:971
 /* (cons car-arg cdr-arg) => (car-arg cdr-arg) */ //
 //
 func f_cons(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 	func() {
 		if int32(int8((listp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(967)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(973)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if int32(int8((finalp(list_cdr(p_Object(args)))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(968)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(974)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1941,14 +2011,14 @@ func f_cons(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object
 	return
 }
 
-// f_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:979
+// f_car - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:985
 /* (car cons-arg) : cons-arg is a list => car of cons-arg */ //
 //
 func f_car(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 	func() {
 		if int32(int8((finalp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(981)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(987)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1956,7 +2026,7 @@ func f_car(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object)
 		func() {
 			if int32(int8((listp(p_Object(arg))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(986)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(992)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		return list_car(p_Object(arg))
@@ -1964,14 +2034,14 @@ func f_car(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object)
 	return
 }
 
-// f_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:993
+// f_cdr - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:999
 /* (cdr cons-arg) : cons-arg is a list => cdr of cons-arg */ //
 //
 func f_cdr(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 	func() {
 		if int32(int8((finalp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(995)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("finalp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1001)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -1979,7 +2049,7 @@ func f_cdr(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object)
 		func() {
 			if int32(int8((listp(p_Object(arg))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1000)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(arg)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1006)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		return list_cdr(p_Object(arg))
@@ -1987,7 +2057,7 @@ func f_cdr(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object)
 	return
 }
 
-// f_cond - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1010
+// f_cond - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1016
 /* (cond ifthen-args ...) : each ifthen-args is an ifthen-pair; each
    ifthen-pair is a list of form (if-arg then-form) => eval(then-form)
    for the first if-arg in the list that is not nil (true), otherwise
@@ -2000,7 +2070,7 @@ func f_cond(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object
 	func() {
 		if int32(int8((listp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1015)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1021)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -2008,13 +2078,13 @@ func f_cond(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object
 		func() {
 			if int32(int8((listp(p_Object(pair))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(pair)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1020)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(pair)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1026)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		func() {
 			if int32(int8((finalp(list_cdr(p_Object(pair)))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("finalp(list_cdr(pair))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1021)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("finalp(list_cdr(pair))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1027)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		{
@@ -2029,7 +2099,7 @@ func f_cond(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object
 	return
 }
 
-// f_defglobal - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1040
+// f_defglobal - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1046
 /* (defglobal) => global environment
    (defglobal newenv) => '() with newenv as the new global environment (SIDE EFFECT)
    (defglobal key value) => '() with new global environment prepended (via cons)
@@ -2045,7 +2115,7 @@ func f_defglobal(what *byte, args p_Object, env p_Object) p_Object {
 	func() {
 		if int32(int8((listp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1045)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1051)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	if int8((nilp(list_cdr(p_Object(args))))) != 0 {
@@ -2054,7 +2124,7 @@ func f_defglobal(what *byte, args p_Object, env p_Object) p_Object {
 		func() {
 			if int32(int8((finalp(list_cdr(p_Object(args)))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1053)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1059)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		{
@@ -2063,7 +2133,7 @@ func f_defglobal(what *byte, args p_Object, env p_Object) p_Object {
 			func() {
 				if int32(int8((atomicp(p_Object(sym))))) != 0 {
 				} else {
-					linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1059)), (&[]byte("void print_number(int *)\x00")[0]))
+					linux.AssertFail((&[]byte("atomicp(sym)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1065)), (&[]byte("void print_number(int *)\x00")[0]))
 				}
 			}()
 			p_environment = object_new(binding_new((object_new(p_Object(p_atomic), p_Object((object_symbol(p_Object(sym)))))), p_Object((form))), p_Object((p_environment)))
@@ -2072,28 +2142,28 @@ func f_defglobal(what *byte, args p_Object, env p_Object) p_Object {
 	return p_Object(p_nil)
 }
 
-// f_eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1071
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1076 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// f_eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1077
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1082 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
 /* (eval arg [env]) => arg evaluated with respect to environment env (default is current env) */ //
 //
 func f_eval(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Object) {
 	func() {
 		if int32(int8((listp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1073)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1079)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	func() {
 		if (map[bool]int32{false: 0, true: 1}[int32(int8((nilp(list_cdr(p_Object(args)))))) != 0 || int32(int8((finalp(list_cdr(p_Object(args)))))) != 0]) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("nilp(list_cdr(args)) || finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1074)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("nilp(list_cdr(args)) || finalp(list_cdr(args))\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1080)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	return
 }
 
-// f_apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1083
-// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1112 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
+// f_apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1089
+// Error (ReturnStmt):  /home/craig/github/LispZero/lisp-zero-single.c:1118 : Cannot transpileReturnStmt. err = Cannot transpileToExpr. err = Error in transpileCallExpr : Cannot transpileToExpr. err = Cannot transpile ConditionalOperator : err = Cannot casting {p_Object -> p_Object':'struct Object_s *}. err = Cannot casting {struct Object_s * -> p_Object':'struct Object_s *}. err = Cannot resolve type 'p_Object':'struct Object_s *' : Cannot resolve type 'p_Object':'struct Object_s' : I couldn't find an appropriate Go type for the C type 'p_Object':'struct Object_s'.
 /* (apply zedba me forms [env]) => zedba invoked with reference to
    (presumably) itself, forms to be bound to zedba's arguments, and
    environment for such bindings (default is current env) */ //
@@ -2102,7 +2172,7 @@ func f_apply(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Objec
 	func() {
 		if int32(int8((listp(p_Object(args))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1085)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("listp(args)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1091)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	{
@@ -2114,18 +2184,18 @@ func f_apply(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Objec
 		func() {
 			if int32(int8((listp(p_Object(rest))))) != 0 {
 			} else {
-				linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1096)), (&[]byte("void print_number(int *)\x00")[0]))
+				linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1102)), (&[]byte("void print_number(int *)\x00")[0]))
 			}
 		}()
 		{
-			var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:1093 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
+			var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:1099 : cannot determine type for LHS 'p_Symbol', will use 'void *' for all fields. Is lvalue = true
 			me p_Object = eval(what, list_car(p_Object(rest)), p_Object(env))
 			var new_rest p_Object = list_cdr(p_Object(rest))
 			rest = new_rest
 			func() {
 				if int32(int8((listp(p_Object(rest))))) != 0 {
 				} else {
-					linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1103)), (&[]byte("void print_number(int *)\x00")[0]))
+					linux.AssertFail((&[]byte("listp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1109)), (&[]byte("void print_number(int *)\x00")[0]))
 				}
 			}()
 			{
@@ -2135,7 +2205,7 @@ func f_apply(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Objec
 				func() {
 					if (map[bool]int32{false: 0, true: 1}[int32(int8((nilp(p_Object(rest))))) != 0 || int32(int8((finalp(p_Object(rest))))) != 0]) != 0 {
 					} else {
-						linux.AssertFail((&[]byte("nilp(rest) || finalp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1110)), (&[]byte("void print_number(int *)\x00")[0]))
+						linux.AssertFail((&[]byte("nilp(rest) || finalp(rest)\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1116)), (&[]byte("void print_number(int *)\x00")[0]))
 					}
 				}()
 			}
@@ -2144,21 +2214,21 @@ func f_apply(what *byte, args p_Object, env p_Object) (c2goDefaultReturn p_Objec
 	return
 }
 
-// f_dot_symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1119
+// f_dot_symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1125
 /* (.symbol_dump) : dump symbol names along with their p_Symbol objects */ //
 //
 func f_dot_symbol_dump(what *byte, args p_Object, env p_Object) p_Object {
 	func() {
 		if (noarch.Object_sToInt32(*Object_s((noarch.NotP_Object(p_Object(args)))))) != 0 {
 		} else {
-			linux.AssertFail((&[]byte("!args\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1121)), (&[]byte("void print_number(int *)\x00")[0]))
+			linux.AssertFail((&[]byte("!args\x00")[0]), (&[]byte("/home/craig/github/LispZero/lisp-zero-single.c\x00")[0]), uint32(int32(1127)), (&[]byte("void print_number(int *)\x00")[0]))
 		}
 	}()
 	symbol_dump()
 	return p_Object(p_nil)
 }
 
-// initialize_builtin - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1128
+// initialize_builtin - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1134
 func initialize_builtin(sym *byte, fn compiled_fn) p_Object {
 	var tmp p_Object
 	p_environment = object_new(binding_new((object_new(p_Object(p_atomic), p_Object((symbol_sym(sym))))), (func() p_Object {
@@ -2168,7 +2238,7 @@ func initialize_builtin(sym *byte, fn compiled_fn) p_Object {
 	return p_Object(tmp)
 }
 
-// initialize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1139
+// initialize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1145
 /* TODO: Decide on a better name. */ //
 //
 func initialize() {
@@ -2189,7 +2259,7 @@ func initialize() {
 	symbol_strdup = int8((int8(int32(1))))
 }
 
-// main - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1167
+// main - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1173
 func main() {
 	argc := int32(len(os.Args))
 	argv__multiarray := [][]byte{}
@@ -2219,7 +2289,7 @@ func main() {
 	return
 }
 
-// debug_output - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1190
+// debug_output - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1196
 func debug_output(obj p_Object) {
 	object_write(stdout, p_Object(obj))
 	noarch.Fprintf(stdout, (&[]byte("\n\x00")[0]))
