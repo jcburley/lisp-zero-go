@@ -8,20 +8,11 @@
 // Warning (RecordDecl):  /usr/include/libio.h:144 : could not lookup type definition for : _IO_FILE
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{56226832 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{44975120 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
-// Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:619 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:620 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:621 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:628 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:630 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:636 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:651 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 // Warning: using unsafe slice cast to convert from []byte to []byte
 
 package main
@@ -655,7 +646,7 @@ type __compar_d_fn_t func(unsafe.Pointer, unsafe.Pointer, unsafe.Pointer) int32
 
 const // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{56226832 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{44975120 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -1397,18 +1388,14 @@ type buffer_s struct {
 	used     size_t
 	contents *byte
 }
-type buffer *buffer_s
 
 // buffer_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:611
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:619 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:620 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:621 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 /* Input */ //
 //
-func buffer_new(initial_size size_t) buffer {
-	var buf buffer = (buffer)(noarch.Malloc(int32(24)))
+func buffer_new(initial_size size_t) *buffer_s {
+	var buf *buffer_s = (*buffer_s)(noarch.Malloc(int32(24)))
 	var contents *byte = (*byte)(noarch.Malloc(int32(uint32((size_t(initial_size))))))
-	if *buffer_s((noarch.NotBuffer(buffer(buf)))) != nil || contents == nil {
+	if buf == nil || contents == nil {
 		for {
 			var m *byte = (&[]byte("cannot allocate buffer for lexemes\x00")[0])
 			if m != nil {
@@ -1423,22 +1410,19 @@ func buffer_new(initial_size size_t) buffer {
 			}
 		}
 	}
-	(*buffer(buf)).size = initial_size
-	(*buffer(buf)).used = size_t(int32(0))
-	(*buffer(buf)).contents = contents
-	return buffer(buf)
+	(*buf).size = initial_size
+	(*buf).used = size_t(int32(0))
+	(*buf).contents = contents
+	return buf
 }
 
 // buffer_append - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:626
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:630 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
 /* TODO: realloc() */ //
 //
-func buffer_append(buf buffer, ch byte) {
-	if size_t((*buffer(buf)).used) >= size_t((*buffer(buf)).size) {
+func buffer_append(buf *buffer_s, ch byte) {
+	if size_t((*buf).used) >= size_t((*buf).size) {
 		for {
-			var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:628 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-			// Warning: using unsafe slice cast to convert from []byte to []byte
-			m *byte = (&[]byte("lexeme too long for this build\x00")[0])
+			var m *byte = (&[]byte("lexeme too long for this build\x00")[0])
 			if m != nil {
 				noarch.Fprintf(stderr, (&[]byte("%s\n\x00")[0]), m)
 			}
@@ -1452,9 +1436,9 @@ func buffer_append(buf buffer, ch byte) {
 		}
 	}
 	*((*byte)(func() unsafe.Pointer {
-		tempVar := (*buffer(buf)).contents
+		tempVar := (*buf).contents
 		return unsafe.Pointer(uintptr(unsafe.Pointer(tempVar)) + (uintptr)(int32(uint32((func() size_t {
-			tempVar := &(*buffer(buf)).used
+			tempVar := &(*buf).used
 			defer func() {
 				*tempVar += 1
 			}()
@@ -1464,10 +1448,9 @@ func buffer_append(buf buffer, ch byte) {
 }
 
 // buffer_tostring - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:633
-// Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:636 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-func buffer_tostring(buf buffer) *byte {
-	buffer_append(buffer(buf), '\x00')
-	return (*buffer(buf)).contents
+func buffer_tostring(buf *buffer_s) *byte {
+	buffer_append(buf, '\x00')
+	return (*buf).contents
 }
 
 // token_putback - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:641
@@ -1483,11 +1466,11 @@ func token_putback(token *byte) {
 }
 
 // token_get - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:648
-func token_get(input *noarch.File, buf buffer) (c2goDefaultReturn *byte) {
+func token_get(input *noarch.File, buf *buffer_s) (c2goDefaultReturn *byte) {
 	var ch int32
 	func() size_t {
-		(*buffer((buf))).used = size_t(int32(0))
-		return (*buffer((buf))).used
+		(*(buf)).used = size_t(int32(0))
+		return (*(buf)).used
 	}()
 	if lookahead_valid != 0 {
 		lookahead_valid = int32(0)
@@ -1500,8 +1483,7 @@ func token_get(input *noarch.File, buf buffer) (c2goDefaultReturn *byte) {
 			return tempVar
 		}()) == -int32(1) {
 			for {
-				var // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:651 : cannot determine type for LHS 'buffer', will use 'void *' for all fields. Is lvalue = true
-				m *byte = nil
+				var m *byte = nil
 				if m != nil {
 					noarch.Fprintf(stderr, (&[]byte("%s\n\x00")[0]), m)
 				}
@@ -1529,9 +1511,9 @@ func token_get(input *noarch.File, buf buffer) (c2goDefaultReturn *byte) {
 			break
 		}
 	}
-	buffer_append(buffer(buf), byte(ch))
+	buffer_append(buf, byte(ch))
 	if noarch.Strchr((&[]byte("()'\x00")[0]), ch) != nil {
-		return buffer_tostring(buffer(buf))
+		return buffer_tostring(buf)
 	}
 	for {
 		if (func() int32 {
@@ -1558,28 +1540,27 @@ func token_get(input *noarch.File, buf buffer) (c2goDefaultReturn *byte) {
 			return unsafe.Pointer(uintptr(unsafe.Pointer(tempVar)) + (uintptr)((ch))*unsafe.Sizeof(*tempVar))
 		}())))&int32(uint16(_ISspace)) != 0 {
 			ungetc(ch, input)
-			return buffer_tostring(buffer(buf))
+			return buffer_tostring(buf)
 		}
-		buffer_append(buffer(buf), byte(ch))
+		buffer_append(buf, byte(ch))
 	}
 	return
 }
 
 // object_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:688
-func object_read(input *noarch.File, buf buffer) *Object_s {
+func object_read(input *noarch.File, buf *buffer_s) *Object_s {
 	var token *byte
-	token = token_get(input, buffer(buf))
+	token = token_get(input, buf)
 	if noarch.NotInt32(noarch.Strcmp(token, (&[]byte("(\x00")[0]))) != 0 {
-		return list_read(input, buffer(buf))
+		return list_read(input, buf)
 	}
 	if noarch.NotInt32(noarch.Strcmp(token, (&[]byte("'\x00")[0]))) != 0 {
-		var tmp *Object_s = object_read(input, buffer(buf))
+		var tmp *Object_s = object_read(input, buf)
 		return object_new(object_new(p_atomic, (*Object_s)(unsafe.Pointer((p_sym_quote)))), object_new(tmp, p_nil))
 	}
 	if noarch.NotInt32(noarch.Strcmp(token, (&[]byte(")\x00")[0]))) != 0 {
 		for {
-			var // Warning: using unsafe slice cast to convert from []byte to []byte
-			m *byte = (&[]byte("unbalanced close paren\x00")[0])
+			var m *byte = (&[]byte("unbalanced close paren\x00")[0])
 			if m != nil {
 				noarch.Fprintf(stderr, (&[]byte("%s\n\x00")[0]), m)
 			}
@@ -1598,15 +1579,15 @@ func object_read(input *noarch.File, buf buffer) *Object_s {
 // list_read - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:711
 /* Make sure we first read the object before going on to read the rest of the list. */ //
 //
-func list_read(input *noarch.File, buf buffer) *Object_s {
-	var token *byte = token_get(input, buffer(buf))
+func list_read(input *noarch.File, buf *buffer_s) *Object_s {
+	var token *byte = token_get(input, buf)
 	var tmp *Object_s
 	if noarch.NotInt32(noarch.Strcmp(token, (&[]byte(")\x00")[0]))) != 0 {
 		return p_nil
 	}
 	if noarch.NotInt32(noarch.Strcmp(token, (&[]byte(".\x00")[0]))) != 0 {
-		tmp = object_read(input, buffer(buf))
-		if noarch.Strcmp(token_get(input, buffer(buf)), (&[]byte(")\x00")[0])) != 0 {
+		tmp = object_read(input, buf)
+		if noarch.Strcmp(token_get(input, buf), (&[]byte(")\x00")[0])) != 0 {
 			for {
 				var m *byte = (&[]byte("missing close parenthese for simple list\x00")[0])
 				if m != nil {
@@ -1624,8 +1605,8 @@ func list_read(input *noarch.File, buf buffer) *Object_s {
 		return tmp
 	}
 	token_putback(token)
-	tmp = object_read(input, buffer(buf))
-	return object_new(tmp, list_read(input, buffer(buf)))
+	tmp = object_read(input, buf)
+	return object_new(tmp, list_read(input, buf))
 }
 
 // quotep - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:736
@@ -2246,11 +2227,11 @@ func main() {
 		quiet = int8((int8(int32(1))))
 	}
 	noarch.Memset(unsafe.Pointer(&map_sym), int32(0), int32(32))
-	var buf buffer
+	var buf *buffer_s
 	initialize()
 	buf = buffer_new(size_t(int32(1000)))
 	for {
-		var obj *Object_s = object_read(stdin, buffer(buf))
+		var obj *Object_s = object_read(stdin, buf)
 		if int8((noarch.NotInt8(quiet))) != 0 {
 			object_write(stdout, eval((&[]byte("stdin\x00")[0]), obj, p_environment))
 			noarch.Fprintf(stdout, (&[]byte("\n\x00")[0]))
