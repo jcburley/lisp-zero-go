@@ -8,7 +8,7 @@
 // Warning (RecordDecl):  /usr/include/libio.h:144 : could not lookup type definition for : _IO_FILE
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{59909136 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{49030160 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -22,9 +22,7 @@
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:439 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:445 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:451 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
-// Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:458 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
 // Warning: using unsafe slice cast to convert from []byte to []byte
-// Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:463 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:465 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:466 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning: using unsafe slice cast to convert from []byte to []byte
@@ -680,7 +678,7 @@ type __compar_d_fn_t func(unsafe.Pointer, unsafe.Pointer, unsafe.Pointer) int32
 
 const // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{59909136 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{49030160 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -1077,65 +1075,32 @@ func string_duplicate(str *byte) *byte {
 type p_Symbol *Symbol_s
 type p_Object *Object_s
 type compiled_fn func(*byte, p_Object, p_Object) p_Object
-type Cdr_s struct{ memory unsafe.Pointer }
+type Cdr_u struct{ memory unsafe.Pointer }
 
-func (unionVar *Cdr_s) copy() Cdr_s {
+func (unionVar *Cdr_u) copy() Cdr_u {
 	var buffer [8]byte
 	for i := range buffer {
 		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
 	}
-	var newUnion Cdr_s
+	var newUnion Cdr_u
 	newUnion.memory = unsafe.Pointer(&buffer)
 	return newUnion
 }
-func (unionVar *Cdr_s) obj() *p_Object {
+func (unionVar *Cdr_u) obj() *p_Object {
 	if unionVar.memory == nil {
 		var buffer [8]byte
 		unionVar.memory = unsafe.Pointer(&buffer)
 	}
 	return (*p_Object)(unionVar.memory)
 }
-func (unionVar *Cdr_s) sym() *p_Symbol {
+func (unionVar *Cdr_u) sym() *p_Symbol {
 	if unionVar.memory == nil {
 		var buffer [8]byte
 		unionVar.memory = unsafe.Pointer(&buffer)
 	}
 	return (*p_Symbol)(unionVar.memory)
 }
-func (unionVar *Cdr_s) fn() *compiled_fn {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*compiled_fn)(unionVar.memory)
-}
-
-type Cdr_t struct{ memory unsafe.Pointer }
-
-func (unionVar *Cdr_t) copy() Cdr_t {
-	var buffer [8]byte
-	for i := range buffer {
-		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
-	}
-	var newUnion Cdr_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *Cdr_t) obj() *p_Object {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*p_Object)(unionVar.memory)
-}
-func (unionVar *Cdr_t) sym() *p_Symbol {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*p_Symbol)(unionVar.memory)
-}
-func (unionVar *Cdr_t) fn() *compiled_fn {
+func (unionVar *Cdr_u) fn() *compiled_fn {
 	if unionVar.memory == nil {
 		var buffer [8]byte
 		unionVar.memory = unsafe.Pointer(&buffer)
@@ -1145,7 +1110,7 @@ func (unionVar *Cdr_t) fn() *compiled_fn {
 
 type Object_s struct {
 	car p_Object
-	cdr Cdr_t
+	cdr Cdr_u
 }
 type Object Object_s
 
@@ -1265,16 +1230,14 @@ func object_compiled(compiled p_Object) compiled_fn {
 }
 
 // object_new - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:454
-// Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:463 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:465 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 // Warning (MemberExpr):  /home/craig/github/LispZero/lisp-zero-single.c:466 : cannot determine type for LHS 'p_Object', will use 'void *' for all fields. Is lvalue = true
 func object_new(car p_Object, cdr p_Object) p_Object {
 	var obj p_Object
-	obj = (p_Object)(noarch.Malloc(int32(0)))
+	obj = (p_Object)(noarch.Malloc(int32(16)))
 	if *Object_s((noarch.NotP_Object(p_Object(obj)))) != nil {
 		for {
-			var // Warning (UnaryExprOrTypeTraitExpr):  /home/craig/github/LispZero/lisp-zero-single.c:458 : Cannot determine sizeof : |Object|. err = Cannot determine sizeof : |Cdr_t|. err = error in array size
-			// Warning: using unsafe slice cast to convert from []byte to []byte
+			var // Warning: using unsafe slice cast to convert from []byte to []byte
 			m *byte = (&[]byte("no more memory\x00")[0])
 			if m != nil {
 				noarch.Fprintf(stderr, (&[]byte("%s\n\x00")[0]), m)
@@ -1289,7 +1252,7 @@ func object_new(car p_Object, cdr p_Object) p_Object {
 		}
 	}
 	allocations += 1
-	allocations_total += int64(uint64(0))
+	allocations_total += int64(uint64(16))
 	(*p_Object(obj)).car = car
 	(*(*p_Object(obj)).cdr.obj()) = cdr
 	return p_Object(obj)
