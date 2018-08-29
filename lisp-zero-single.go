@@ -8,7 +8,7 @@
 // Warning (RecordDecl):  /usr/include/libio.h:144 : could not lookup type definition for : _IO_FILE
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{47566848 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{32759808 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -676,7 +676,7 @@ type __compar_d_fn_t func(unsafe.Pointer, unsafe.Pointer, unsafe.Pointer) int32
 
 const // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{47566848 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{32759808 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -2013,43 +2013,47 @@ func f_defglobal(what *byte, args *Object_s, env *Object_s) *Object_s {
 
 // f_eval - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1174
 /* (eval arg [env]) => arg evaluated with respect to environment env (default is current env) */ //
+/* Eval this early, rather than in the final eval() below, so .c
+   version .go compilers don't choose different order of evaluations
+   and so mess up the tracefiles. */ //
 //
 func f_eval(what *byte, args *Object_s, env *Object_s) *Object_s {
 	assert_or_dump_(uint32(int32(1176)), (listp(args)), (args), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
 	assert_or_dump_(uint32(int32(1177)), int8((int8((map[bool]int32{false: 0, true: 1}[int32(int8((nilp(list_cdr(args))))) != 0 || int32(int8((finalp(list_cdr(args))))) != 0])))), (args), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
-	return eval(what, eval(what, list_car(args), env), func() *Object_s {
+	var n_env *Object_s = func() *Object_s {
 		if int32(int8((nilp(list_cdr(args))))) != 0 {
 			return env
 		} else {
 			return eval(what, list_car(list_cdr(args)), env)
 		}
-	}())
+	}()
+	return eval(what, eval(what, list_car(args), env), n_env)
 }
 
-// f_apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1186
+// f_apply - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1190
 /* (apply zedba me forms [env]) => zedba invoked with reference to
    (presumably) itself, forms to be bound to zedba's arguments, and
    environment for such bindings (default is current env) */ //
 //
 func f_apply(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Object_s) {
-	assert_or_dump_(uint32(int32(1188)), (listp(args)), (args), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
+	assert_or_dump_(uint32(int32(1192)), (listp(args)), (args), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
 	{
 		var func_ *Object_s = eval(what, list_car(args), env)
 		var rest *Object_s = list_cdr(args)
 		if int8((atomp(list_car(args)))) != 0 {
 			what = (*(object_symbol(list_car(args)))).name
 		}
-		assert_or_dump_(uint32(int32(1199)), (listp(rest)), (rest), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
+		assert_or_dump_(uint32(int32(1203)), (listp(rest)), (rest), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
 		{
 			var me *Object_s = eval(what, list_car(rest), env)
 			var new_rest *Object_s = list_cdr(rest)
 			rest = new_rest
-			assert_or_dump_(uint32(int32(1206)), (listp(rest)), (rest), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
+			assert_or_dump_(uint32(int32(1210)), (listp(rest)), (rest), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
 			{
 				var forms *Object_s = eval(what, list_car(rest), env)
 				var new_rest *Object_s = list_cdr(rest)
 				rest = new_rest
-				assert_or_dump_(uint32(int32(1213)), int8((int8((map[bool]int32{false: 0, true: 1}[int32(int8((nilp(rest)))) != 0 || int32(int8((finalp(rest)))) != 0])))), (rest), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
+				assert_or_dump_(uint32(int32(1217)), int8((int8((map[bool]int32{false: 0, true: 1}[int32(int8((nilp(rest)))) != 0 || int32(int8((finalp(rest)))) != 0])))), (rest), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
 				return apply(what, func_, me, forms, func() *Object_s {
 					if int32(int8((nilp(rest)))) != 0 {
 						return p_nil
@@ -2063,16 +2067,16 @@ func f_apply(what *byte, args *Object_s, env *Object_s) (c2goDefaultReturn *Obje
 	return
 }
 
-// f_dot_symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1222
+// f_dot_symbol_dump - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1226
 /* (.symbol_dump) : dump symbol names along with their struct Symbol_s * objects */ //
 //
 func f_dot_symbol_dump(what *byte, args *Object_s, env *Object_s) *Object_s {
-	assert_or_dump_(uint32(int32(1224)), int8((int8((map[bool]int32{false: 0, true: 1}[args == nil])))), (args), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
+	assert_or_dump_(uint32(int32(1228)), int8((int8((map[bool]int32{false: 0, true: 1}[args == nil])))), (args), &(*(*[]byte)(unsafe.Pointer(noarch.UnsafeSliceToSlice([]byte("expected WHAT??\x00"), 1, 1))))[0])
 	symbol_dump()
 	return p_nil
 }
 
-// initialize_builtin - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1231
+// initialize_builtin - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1235
 func initialize_builtin(sym *byte, fn compiled_fn) *Object_s {
 	var tmp *Object_s
 	p_environment = object_new(binding_new((object_new(p_atomic, (*Object_s)(unsafe.Pointer((symbol_sym(sym)))))), (func() *Object_s {
@@ -2082,7 +2086,7 @@ func initialize_builtin(sym *byte, fn compiled_fn) *Object_s {
 	return tmp
 }
 
-// initialize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1242
+// initialize - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1246
 /* TODO: Decide on a better name. */ //
 //
 func initialize() {
@@ -2103,7 +2107,7 @@ func initialize() {
 	symbol_strdup = int8((int8(int32(1))))
 }
 
-// main - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1270
+// main - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1274
 func main() {
 	argc := int32(len(os.Args))
 	argv__multiarray := [][]byte{}
@@ -2163,7 +2167,7 @@ func main() {
 	return
 }
 
-// debug_output - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1327
+// debug_output - transpiled function from  /home/craig/github/LispZero/lisp-zero-single.c:1331
 func debug_output(obj *Object_s) {
 	object_write(stdout, obj)
 	noarch.Fprintf(stdout, (&[]byte("\n\x00")[0]))
